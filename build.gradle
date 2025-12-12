@@ -9,8 +9,6 @@
 
 
 plugins {
-    id "jacoco"
-    id "org.sonarqube" version "5.1.0.4882"
     id 'org.liquibase.gradle' version '2.2.0'
 }
 // Apply the java plugin to add support for Java
@@ -42,18 +40,5 @@ dependencies {
 jar {
     manifest {
         attributes 'Main-Class': 'gipf.Main'
-    }
-}
-
-sonar {
-    properties {
-        property "sonar.projectKey", "Gipf"
-        property "sonar.projectName", "Gipf"
-    }
-}
-
-jacocoTestReport {
-    reports {
-        xml.required = true
     }
 }
