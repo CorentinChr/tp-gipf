@@ -20,7 +20,7 @@ pipeline {
       stage('Run Sonarqube') {
           steps {
               echo "Lancement de Sonarqube"
-              sh './gradlew sonar \
+              sh './gradlew -Dhttps.proxyHost="proxy1-rech" -Dhttps.proxyPort=3128 sonar \
                   -Dsonar.projectKey=tp \
                   -Dsonar.projectName="tp" \
                   -Dsonar.host.url=http://172.17.0.1:9000 \
