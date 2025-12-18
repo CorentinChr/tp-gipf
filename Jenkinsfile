@@ -9,13 +9,7 @@ pipeline {
           }
       }
 
-      stage('Run Tests') {
-          steps {
-              echo "Lancement des tests avec Gradle"
-              sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 test'
-          }
-      }
-
+    
       stage('Run Sonarqube') {
           steps {
               echo "Lancement de Sonarqube"
@@ -26,6 +20,14 @@ pipeline {
                   -Dsonar.token=sqp_804a32de64e2e160f8b97c1235e37cbd861180cb'
           }
       }
+
+      stage('Run Tests') {
+          steps {
+              echo "Lancement des tests avec Gradle"
+              sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 test'
+          }
+      }
+
     
     }
 }
