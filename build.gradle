@@ -14,6 +14,9 @@ plugins {
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 
+plugins {
+  id "org.sonarqube" version "7.2.0.6526"
+}
 
 // In this section you declare where to find the dependencies of your project
 repositories {
