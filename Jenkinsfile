@@ -12,7 +12,7 @@ pipeline {
       stage('Run Tests') {
           steps {
               echo "Lancement des tests avec Gradle"
-              sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 test
+              sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 test'
           }
       }
     }
