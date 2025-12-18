@@ -42,6 +42,12 @@ pipeline {
           }
       }
 
+    stage('Release') {
+        steps {
+            archiveArtifacts artifacts: 'build/libs/**/*.jar'
+        }
+    }
+
 
 
     
