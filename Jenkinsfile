@@ -9,6 +9,13 @@ pipeline {
           }
       }
 
+      stage('Build') {
+          steps {
+            echo "Build du projet"
+            sh './gradlew -Dhttps.proxyHost="proxy1-rech" -Dhttps.proxyPort=3128 compileJava'
+          }
+      }
+
     
       stage('Run Sonarqube') {
           steps {
@@ -24,7 +31,7 @@ pipeline {
       stage('Run Tests') {
           steps {
               echo "Lancement des tests avec Gradle"
-              sh './gradlew -Dhttps.proxyHost=proxy1-rech -Dhttps.proxyPort=3128 test'
+              sh './gradlew -Dhttps.proxyHost="proxy1-rech" -Dhttps.proxyPort=3128 test'
           }
       }
 
