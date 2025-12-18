@@ -21,10 +21,10 @@ pipeline {
           steps {
               echo "Lancement de Sonarqube"
               sh './gradlew sonar \
-                  -Dsonar.projectKey=TPControle \
-                  -Dsonar.projectName="TPControle" \
+                  -Dsonar.projectKey=tp \
+                  -Dsonar.projectName="tp" \
                   -Dsonar.host.url=http://172.17.0.1:9000 \
-                  -Dsonar.token=sqp_804a32de64e2e160f8b97c1235e37cbd861180cb'
+                  -Dsonar.token=sqp_ce3212db5c33d3d53335643be75c6c724131602d'
           }
       }
 
