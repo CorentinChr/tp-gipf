@@ -16,7 +16,7 @@ pipeline {
               sh './gradlew sonar \
                   -Dsonar.projectKey=TPControle \
                   -Dsonar.projectName="TPControle" \
-                  -Dsonar.host.url=http://localhost:9000 \
+                  -Dsonar.host.url=http://172.17.0.1:9000 \
                   -Dsonar.token=sqp_804a32de64e2e160f8b97c1235e37cbd861180cb'
           }
       }
